@@ -9,7 +9,7 @@
   export let validityMessage = "";
   export let value;
 
-  let styling = "w-full  bg-transparent  p-2  text-white  caret-white  overflow-elipsis  rounded  border  border-tint-3  hover:border-primary  placeholder-tint-3"
+  let styling = "w-full  bg-transparent  p-2  text-white  caret-white  overflow-elipsis  rounded  border  border-tint-3  focus:outline-none  focus:border-primary  placeholder-tint-3"
   let touched = false;
 </script>
 
