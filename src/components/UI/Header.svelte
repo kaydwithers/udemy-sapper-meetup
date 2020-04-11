@@ -2,11 +2,11 @@
   import Heading from "./Heading.svelte";
 </script>
 
-<header class="flex  items-center  justify-center  bg-pink-900  text-white">
+<header class="flex  items-center  justify-center  bg-violet  text-white">
   <Heading 
     size="1"
-    mb=""
+    class="py-4  mb-0"
   >
-    Meetup
+    📚 Maester Winston's Knowledge Compendium
   </Heading>
 </header>

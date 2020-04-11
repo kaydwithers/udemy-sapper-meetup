@@ -1,19 +1,16 @@
-import { writable } from 'svelte/store';
+import { writable } from "svelte/store";
 
 const posts = writable([]);
 
 const customPostsStore = {
   subscribe: posts.subscribe,
-  setPosts: (postArray) => {
+  setPosts: postArray => {
     posts.set(postArray);
   },
 
-  addPost: postData => {
-    const newPost = {
-      ...postData
-    };
+  addPosts: post => {
     posts.update(items => {
-      return [newPost, ...items];
+      return items.concat(post);
     });
   },
 

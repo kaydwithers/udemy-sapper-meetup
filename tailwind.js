@@ -126,6 +126,24 @@ module.exports = {
         800: '#97266d',
         900: '#702459',
       },
+
+      // custom colours
+      background: 'var(--background)',
+      primary: 'var(--primary)',
+      secondary: 'var(--secondary)',
+
+      'tint-1': 'var(--tint-1)',
+      'tint-2': 'var(--tint-2)',
+      'tint-3': 'var(--tint-3)',
+      'tint-4': 'var(--tint-4)',
+      'tint-5': 'var(--tint-5)',
+      'tint-6': 'var(--tint-6)',
+
+      'error': 'var(--error)',
+      'error-dark': 'var(--error-dark)',
+
+      'warning': 'var(--warning)',
+      'violet': 'var(--violet)',
     },
     spacing: {
       px: '1px',

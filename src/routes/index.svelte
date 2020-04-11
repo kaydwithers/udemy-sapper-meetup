@@ -1,31 +1,31 @@
 <script context="module">
   export function preload(page) {
-    return this.fetch("https://udemy-svelte-meetup.firebaseio.com/meetups.json")
+    return this.fetch("https://knowledge-5fe10.firebaseio.com/posts.json")
       .then(res => {
         if (!res.ok) {
-          throw new Error("Fetching meetups failed, please try again later!");
+          throw new Error("Fetching posts failed, please try again later!");
         }
         return res.json();
       })
       .then(data => {
-        const loadedMeetups = [];
+        const loadedPosts = [];
         for (const key in data) {
-          loadedMeetups.push({
+          loadedPosts.push({
             ...data[key],
             id: key
           });
         }
-        return { fetchedMeetups: loadedMeetups.reverse() };
+        return { fetchedPosts: loadedPosts.reverse() };
         // setTimeout(() => {
         //   isLoading = false;
-        //   meetups.setMeetups(loadedMeetups.reverse());
+        //   posts.setPosts(loadedPosts.reverse());
         // }, 1000);
       })
       .catch(err => {
         error = err;
         isLoading = false;
         console.log(err);
-        this.error(500, "Could not fetch meetups!");
+        this.error(500, "Could not fetch posts!");
       });
   }
 </script>
@@ -34,18 +34,20 @@
   import { createEventDispatcher, onMount, onDestroy } from "svelte";
   import { scale } from "svelte/transition";
   import { flip } from "svelte/animate";
-  import meetups from "../store.js";
-  import MeetupItem from "../components/Meetup/MeetupItem.svelte";
-  import MeetupFilter from "../components/Meetup/MeetupFilter.svelte";
+  import posts from "../store.js";
+
+  import AddPost from "../components/Post/AddPost.svelte";
   import Button from "../components/UI/Button.svelte";
-  import EditMeetup from "../components/Meetup/EditMeetup.svelte";
+  import EditPost from "../components/Post/EditPost.svelte";
   import Layout from "../components/UI/Layout.svelte";
   import LayoutItem from "../components/UI/LayoutItem.svelte";
   import LoadingSpinner from "../components/UI/LoadingSpinner.svelte";
+  import PostItem from "../components/Post/PostItem.svelte";
+  import PostFilter from "../components/Post/PostFilter.svelte";
 
-  export let fetchedMeetups;
+  export let fetchedPosts;
 
-  let loadedMeetups = [];
+  let loadedPosts = [];
   let editMode;
   let editedId;
   let isLoading;
@@ -55,15 +57,15 @@
 
   let favsOnly = false;
 
-  $: filteredMeetups = favsOnly
-    ? loadedMeetups.filter(m => m.isFavorite)
-    : loadedMeetups;
+  $: filteredPosts = favsOnly
+    ? loadedPosts.filter(m => m.isFavorite)
+    : loadedPosts;
 
   onMount(() => {
-    unsubscribe = meetups.subscribe(items => {
-      loadedMeetups = items;
+    unsubscribe = posts.subscribe(items => {
+      loadedPosts = items;
     });
-    meetups.setMeetups(fetchedMeetups);
+    posts.setPosts(fetchedPosts);
   });
 
   onDestroy(() => {
@@ -76,7 +78,7 @@
     favsOnly = event.detail === 1;
   }
 
-  function savedMeetup(event) {
+  function savedPost(event) {
     editMode = null;
     editedId = null;
   }
@@ -97,49 +99,50 @@
 </script>
 
 <svelte:head>
-  <title>All Meetups</title>
+  <title>All Posts</title>
 </svelte:head>
 
+<AddPost />
+
 {#if editMode === 'edit'}
-  <EditMeetup id={editedId} on:save={savedMeetup} on:cancel={cancelEdit} />
+  <EditPost id={editedId} on:save={savedPost} on:cancel={cancelEdit} />
 {/if}
 
 {#if isLoading}
   <LoadingSpinner />
 
 {:else}
-  <Layout id="meetup-controls">
+  <!--
+  <Layout>
     <LayoutItem>
-      <MeetupFilter on:select={setFilter} />
-      <Button on:click={startAdd}>New Meetup</Button>
+      <PostFilter on:select={setFilter} />
+      <Button on:click={startAdd}>New Post</Button>
     </LayoutItem>
   </Layout>
+  -->
 
-  {#if filteredMeetups.length === 0}
-    <p id="no-meetups">No meetups found, you can start adding some.</p>
+  {#if filteredPosts.length === 0}
+    <p>No posts found, you can start adding some.</p>
   {/if}
 
-  <Layout>
-    {#each filteredMeetups as meetup (meetup.id)}
-      <div
-        class="w-full  md:w-1/3"
-        transition:scale
-        animate:flip={{ duration: 300 }}
-      >
-        <LayoutItem>
-          <MeetupItem 
-            id={meetup.id} 
-            title={meetup.title} 
-            subtitle={meetup.subtitle} 
-            description={meetup.description} 
-            imageUrl={meetup.imageUrl} 
-            email={meetup.contactEmail} 
-            address={meetup.address} 
-            isFav={meetup.isFavorite} 
-            on:edit={startEdit}
-          />
-        </LayoutItem>
-      </div>
+  <Layout class="flex-wrap">
+    {#each filteredPosts as post (post.id)}
+    <div
+      class="w-full  mb-16"
+      transition:scale
+      animate:flip={{ duration: 300 }}
+    >
+      <LayoutItem>
+        <PostItem 
+          category={post.category} 
+          content={post.content} 
+          date={post.date} 
+          id={post.id} 
+          isFav={post.isFavorite} 
+          on:edit={startEdit}
+        />
+      </LayoutItem>
+    </div>
     {/each}
   </Layout>
 {/if}

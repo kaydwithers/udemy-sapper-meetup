@@ -1,3 +1,148 @@
+:root {
+  --background: #000;
+  --primary: #fff;
+  --secondary: #888;
+
+  --tint-1: #111;
+  --tint-2: #222;
+  --tint-3: #333;
+  --tint-4: #444;
+  --tint-5: #555;
+  --tint-6: #666;
+
+  --error: #FF0000;
+  --error-dark: #E60000;
+
+  --warning: #F5A623;
+  --violet: #7928CA;
+
+  --font-sans: 'Inter';
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-background text-secondary;
+  font-family: var(--font-sans);
+}
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6,
+a {
+  @apply text-primary;
+}
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6,
+p {
+  @apply mb-4;
+}
+
+.btn {
+  @apply
+    border
+    border-secondary
+    rounded
+    inline-flex
+    px-4
+    py-2
+    transition-colors
+    duration-200
+  ;
+}
+
+  .btn.primary {
+    @apply
+      bg-primary
+      border-primary
+      text-background
+    ;
+  }
+
+    .btn.primary:hover {
+      @apply
+        bg-transparent
+        border-primary
+        text-primary
+      ;
+    }
+
+  .btn.secondary {
+    @apply
+      bg-transparent
+      border-secondary
+      text-secondary
+    ;
+  }
+
+    .btn.secondary:hover {
+      @apply
+        bg-primary
+        border-primary
+        text-background
+      ;
+    }
+
+    .btn.error {
+      @apply
+        bg-error
+        border-error
+        text-primary
+      ;
+    }
+  
+      .btn.error:hover {
+        @apply
+          bg-error-dark
+          border-error-dark
+        ;
+      }
+
+  .btn:disabled {
+    @apply
+      bg-tint-6
+      border-secondary
+      cursor-not-allowed
+      text-secondary
+    ;
+  }
+
+    .btn:disabled:hover {
+      @apply
+        bg-tint-6
+        border-secondary
+        text-secondary
+      ;
+    }
+
+code {
+  @apply 
+    inline-block
+    bg-tint-1
+    border
+    border-tint-3
+    rounded
+    text-warning
+    p-2
+  ;
+  font-family: Menlo;
+}
+
+pre code {
+  @apply 
+    block
+    mb-4
+    overflow-scroll
+    text-secondary
+  ;
+}

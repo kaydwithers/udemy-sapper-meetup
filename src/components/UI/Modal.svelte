@@ -22,7 +22,6 @@
     top: 10vh;
     left: 10%;
     max-height: 80vh;
-    overflow: scroll;
   }
 </style>
 
@@ -34,15 +33,20 @@
 />
 
 <div 
-  class="modal  bg-white  fixed  p-4  shadow  rounded  w-4/5  z-20"
+  class="modal  bg-background  fixed  p-8  shadow  rounded  border  border-tint-3  w-4/5  z-20  overflow-scroll"
   transition:fly="{{ y: 300 }}"
 >
-  <header class="border-b">
-    <Heading size="1">{title}</Heading>
+  <header>
+    <Heading 
+      class="text-white"
+      size="2"
+    >
+      {title}
+    </Heading>
     <slot name="header" />
   </header>
 
-  <div class="p-4">
+  <div>
     <slot />
   </div>
 
@@ -51,7 +55,7 @@
     <button on:click="{() => agreed = true}">Agree</button>
   </div>
 
-  <footer class="p-4">
+  <footer>
     <slot 
       name="footer" 
       didAgree={agreed}

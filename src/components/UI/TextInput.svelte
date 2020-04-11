@@ -9,26 +9,21 @@
   export let validityMessage = "";
   export let value;
 
+  let styling = "w-full  bg-transparent  p-2  text-white  caret-white  overflow-elipsis  rounded  border  border-tint-3  hover:border-primary  placeholder-tint-3"
   let touched = false;
 </script>
 
-<style>
-  label {
-    display: block;
-  }
-
-  input,
-  textarea {
-    border: 1px solid black;
-    color: black;
-  }
-</style>
-
 <div class="mb-4">
-  <label for="{id}">{label}</label>
+  <label 
+    class="block  mb-2" 
+    for="{id}"
+  >
+    {label}
+  </label>
+
   {#if controlType === 'textarea'}
     <textarea 
-      class="border  {valid && !touched ? '' : 'border-red-300'}"
+      class="{styling}  {!valid && touched ? 'border-error' : ''}  h-48"
       {rows}
       {id}
       {placeholder}
@@ -37,8 +32,9 @@
       on:input
     />
   {:else}
+
     <input 
-      class="border  {valid && !touched ? '' : 'border-red-300'}"
+      class="{styling}  {!valid && touched ? 'border-error' : ''}"
       {type}
       {id}
       {placeholder}
@@ -47,8 +43,9 @@
       on:input
     />
   {/if}
+
   {#if validityMessage && !valid && touched}
-  <p class="text-sm  text-red-300">{validityMessage}</p>
+    <p class="text-sm  text-error">{validityMessage}</p>
   {/if}
 </div>
 

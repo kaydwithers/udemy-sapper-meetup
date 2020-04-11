@@ -1,3 +1,20 @@
+:root {
+  --background: #000;
+  --primary: #fff;
+  --secondary: #888;
+  --tint-1: #111;
+  --tint-2: #222;
+  --tint-3: #333;
+  --tint-4: #444;
+  --tint-5: #555;
+  --tint-6: #666;
+  --error: #FF0000;
+  --error-dark: #E60000;
+  --warning: #F5A623;
+  --violet: #7928CA;
+  --font-sans: 'Inter';
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -105,10 +122,6 @@ code {
 /**
  * Remove the border on images inside links in IE 10.
  */
-
-img {
-  border-style: none;
-}
 
 /* Forms
    ========================================================================== */
@@ -255,6 +268,7 @@ textarea {
  */
 
 
+dd,
 h1,
 h2,
 h6,
@@ -351,10 +365,6 @@ html {
  * https://github.com/tailwindcss/tailwindcss/issues/362
  */
 
-img {
-  border-style: solid;
-}
-
 textarea {
   resize: vertical;
 }
@@ -422,7 +432,8 @@ code {
  * https://github.com/mozdevs/cssremedy/issues/14
  */
 
-img {
+
+svg {
   display: block;
   vertical-align: middle;
 }
@@ -433,11 +444,6 @@ img {
  *
  * https://github.com/mozdevs/cssremedy/issues/14
  */
-
-img {
-  max-width: 100%;
-  height: auto;
-}
 
 .container {
   width: 100%;
@@ -467,32 +473,40 @@ img {
   }
 }
 
-.bg-black {
-  background-color: #000;
+.bg-transparent {
+  background-color: transparent;
 }
 
-.bg-white {
-  background-color: #fff;
+.bg-black {
+  background-color: #000;
 }
 
 .bg-red-900 {
   background-color: #742a2a;
 }
 
-.bg-blue-900 {
-  background-color: #2a4365;
+.bg-background {
+  background-color: var(--background);
 }
 
-.bg-pink-900 {
-  background-color: #702459;
-}
-
-.border-red-300 {
-  border-color: #feb2b2;
+.bg-violet {
+  background-color: var(--violet);
 }
 
 .border-red-900 {
   border-color: #742a2a;
+}
+
+.border-tint-3 {
+  border-color: var(--tint-3);
+}
+
+.border-error {
+  border-color: var(--error);
+}
+
+.hover\:border-primary:hover {
+  border-color: var(--primary);
 }
 
 .rounded {
@@ -501,10 +515,6 @@ img {
 
 .border {
   border-width: 1px;
-}
-
-.border-b {
-  border-bottom-width: 1px;
 }
 
 .block {
@@ -523,8 +533,8 @@ img {
   display: flex;
 }
 
-.inline-flex {
-  display: inline-flex;
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .items-center {
@@ -535,10 +545,8 @@ img {
   justify-content: center;
 }
 
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
+.h-48 {
+  height: 12rem;
 }
 
 .h-screen {
@@ -564,21 +572,51 @@ img {
   margin-right: -1rem;
 }
 
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
+}
+
+.mb-16 {
+  margin-bottom: 4rem;
 }
 
 .opacity-75 {
   opacity: 0.75;
 }
 
-.p-4 {
-  padding: 1rem;
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .px-4 {
@@ -591,16 +629,17 @@ img {
   padding-bottom: 3rem;
 }
 
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.placeholder-tint-3::placeholder {
+  color: var(--tint-3);
+}
+
 .fixed {
   position: fixed;
-}
-
-.absolute {
-  position: absolute;
-}
-
-.relative {
-  position: relative;
 }
 
 .top-0 {
@@ -615,12 +654,16 @@ img {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
+.text-center {
+  text-align: center;
+}
+
 .text-white {
   color: #fff;
 }
 
-.text-red-300 {
-  color: #feb2b2;
+.text-error {
+  color: var(--error);
 }
 
 .text-xs {
@@ -667,14 +710,109 @@ img {
   z-index: 20;
 }
 
+body {
+  background-color: var(--background);
+  color: var(--secondary);
+  font-family: var(--font-sans);
+}
+
+h1, 
+h2, 
+h6,
+a {
+  color: var(--primary);
+}
+
+h1, 
+h2, 
+h6,
+p {
+  margin-bottom: 1rem;
+}
+
+.btn {
+  border-width: 1px;
+  border-color: var(--secondary);
+  border-radius: 0.25rem;
+  display: inline-flex;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 200ms;
+}
+
+.btn.primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--background);
+}
+
+.btn.primary:hover {
+  background-color: transparent;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn.secondary {
+  background-color: transparent;
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+.btn.secondary:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--background);
+}
+
+.btn.error {
+  background-color: var(--error);
+  border-color: var(--error);
+  color: var(--primary);
+}
+
+.btn.error:hover {
+  background-color: var(--error-dark);
+  border-color: var(--error-dark);
+}
+
+.btn:disabled {
+  background-color: var(--tint-6);
+  border-color: var(--secondary);
+  cursor: not-allowed;
+  color: var(--secondary);
+}
+
+.btn:disabled:hover {
+  background-color: var(--tint-6);
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+code {
+  display: inline-block;
+  background-color: var(--tint-1);
+  border-width: 1px;
+  border-color: var(--tint-3);
+  border-radius: 0.25rem;
+  color: var(--warning);
+  padding: 0.5rem;
+  font-family: Menlo;
+}
+
+pre code {
+  display: block;
+  margin-bottom: 1rem;
+  overflow: scroll;
+  color: var(--secondary);
+}
+
 @media (min-width: 768px) {
 
   .md\:py-16 {
     padding-top: 4rem;
     padding-bottom: 4rem;
-  }
-
-  .md\:w-1\/3 {
-    width: 33.333333%;
   }
 }

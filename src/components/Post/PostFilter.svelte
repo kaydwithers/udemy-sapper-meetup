@@ -48,7 +48,8 @@
     on:click={() => {
       selectedButton = 0;
       dispatch('select', 0);
-    }}>
+    }}
+  >
     All
   </button>
   <button
@@ -57,7 +58,8 @@
     on:click={() => {
       selectedButton = 1;
       dispatch('select', 1);
-    }}>
+    }}
+  >
     Favorites
   </button>
 </div>
