@@ -15,7 +15,7 @@
 
 <div class="mb-4">
   <label 
-    class="block  mb-2" 
+    class="block  pb-2" 
     for="{id}"
   >
     {label}
