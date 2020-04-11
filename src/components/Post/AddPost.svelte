@@ -87,7 +87,7 @@
     id="content"
     label="Content"
     controlType="textarea"
-    placeholder="Enter some content"
+    placeholder="Enter some markdown content"
     valid={contentValid}
     validityMessage="Please enter valid content."
     bind:value={content}

@@ -11620,13 +11620,14 @@ code {
   border-color: var(--tint-3);
   border-radius: 0.25rem;
   color: var(--warning);
-  padding: 0.5rem;
+  padding: 0;
   font-family: Menlo;
 }
 
 pre code {
   display: block;
   margin-bottom: 1rem;
+  padding: 0.5rem;
   overflow: scroll;
   color: var(--secondary);
 }

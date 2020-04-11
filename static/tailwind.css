@@ -121,7 +121,7 @@ code {
     border-tint-3
     rounded
     text-warning
-    p-2
+    p-0
   ;
   font-family: Menlo;
 }
@@ -130,6 +130,7 @@ pre code {
   @apply 
     block
     mb-4
+    p-2
     overflow-scroll
     text-secondary
   ;
