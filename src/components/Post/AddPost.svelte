@@ -5,6 +5,7 @@
   import posts from "../../store.js";
   import TextInput from "../UI/TextInput.svelte";
   import Button from "../UI/Button.svelte";
+  import Heading from "../UI/Heading.svelte";
   import Select from "../UI/Select.svelte";
 
   let category = "";
@@ -54,7 +55,11 @@
   }
 </script>
 
-<h1 class="text-2xl  mb-4">New post</h1>
+<Heading
+  size="2" 
+>
+  New post
+</Heading>
 
 <form 
   class="w-full"

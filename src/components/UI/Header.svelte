@@ -12,7 +12,7 @@
     <LayoutItem class="text-center">
       <Heading 
         size="1"
-        class="mb-0"
+        spacing="mb-0"
       >
         📚 Maester Winston's Knowledge Compendium
       </Heading>

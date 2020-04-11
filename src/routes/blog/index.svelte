@@ -7,6 +7,8 @@
 </script>
 
 <script>
+	import Heading from "../../components/UI/Heading.svelte";
+
 	export let posts;
 </script>
 
@@ -21,7 +23,11 @@
 	<title>Blog</title>
 </svelte:head>
 
-<h1>Recent posts</h1>
+<Heading
+  size="2" 
+>
+  Recent posts
+</Heading>
 
 <ul>
 	{#each posts as post}
