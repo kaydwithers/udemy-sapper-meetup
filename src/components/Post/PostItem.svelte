@@ -64,7 +64,6 @@
   </div>
 
   <footer>
-    <!-- disabled editing for now
     <Button 
       mode="primary" 
       type="button" 
@@ -72,7 +71,6 @@
     >
       Edit
     </Button>
-    -->
 
     {#if isLoading}
       <!-- <LoadingSpinner /> -->

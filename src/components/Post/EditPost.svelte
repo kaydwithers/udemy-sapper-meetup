@@ -146,6 +146,7 @@
       Cancel
     </Button>
 
+    <!--
     <Button 
       type="button" 
       mode="primary"
@@ -157,9 +158,29 @@
 
     {#if id}
     <Button 
+      disabled="true"
       type="button" 
       mode="error"
       on:click={deletePost}
+    >
+      Delete
+    </Button>
+    {/if}
+    -->
+
+    <Button 
+      type="button" 
+      mode="primary"
+      disabled="true"
+    >
+      Save
+    </Button>
+
+    {#if id}
+    <Button 
+      disabled="true"
+      type="button" 
+      mode="error"
     >
       Delete
     </Button>

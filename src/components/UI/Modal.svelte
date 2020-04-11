@@ -50,10 +50,12 @@
     <slot />
   </div>
 
+  <!--
   <div class="disclaimer">
     <p class="text-sm">Before you close, agree to our terms.</p>
     <button on:click="{() => agreed = true}">Agree</button>
   </div>
+  -->
 
   <footer>
     <slot 
