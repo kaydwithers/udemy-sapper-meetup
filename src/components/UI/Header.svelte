@@ -14,7 +14,7 @@
         size="1"
         spacing="mb-0"
       >
-        📚 Maester Winston&rsquo;s Knowledge Compendium
+        📚 Maester Winston&rsquo;s Knowledge Memorandum
       </Heading>
     </LayoutItem>
   </Layout>
