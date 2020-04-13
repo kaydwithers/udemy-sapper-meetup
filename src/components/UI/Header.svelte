@@ -14,7 +14,7 @@
         size="1"
         spacing="mb-0"
       >
-        📚 Kayd&rsquo;s Knowledge Memorandum
+        Kayd&rsquo;s Knowledge Memorandum 📚
       </Heading>
     </LayoutItem>
   </Layout>

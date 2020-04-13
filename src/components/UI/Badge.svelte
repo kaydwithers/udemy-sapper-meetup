@@ -3,7 +3,7 @@
 </script>
 
 <span 
-  class="text-xs  uppercase  inline-block  mx-1  px-2  rounded  border  border-red-900  bg-red-900  text-white"
+  class="text-xs  inline-block  mb-2  px-2  rounded  border  border-cyan  bg-cyan  text-black"
   transition:slide
 >
   <slot />

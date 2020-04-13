@@ -142,8 +142,9 @@ module.exports = {
       'error': 'var(--error)',
       'error-dark': 'var(--error-dark)',
 
-      'warning': 'var(--warning)',
+      'cyan': 'var(--cyan)',
       'violet': 'var(--violet)',
+      'warning': 'var(--warning)',
     },
     spacing: {
       px: '1px',

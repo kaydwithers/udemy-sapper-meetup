@@ -13,8 +13,9 @@
   --error: #FF0000;
   --error-dark: #E60000;
 
-  --warning: #F5A623;
+  --cyan: #79FFE1;
   --violet: #7928CA;
+  --warning: #F5A623;
 
   --font-sans: 'Inter';
 }
