@@ -26,17 +26,29 @@
 
   import posts from "../store.js";
   import Button from "../components/UI/Button.svelte";
+  import Heading from "../components/UI/Heading.svelte";
+  import Layout from "../components/UI/Layout.svelte";
+  import LayoutItem from "../components/UI/LayoutItem.svelte";
+  import Page from "../components/UI/Page.svelte";
 
   export let loadedPost;
 
   let showdownContent = new showdown.Converter().makeHtml(loadedPost.content);
 </script>
 
-<section>
-  <div>
-    <p class="text-sm  mb-4">{loadedPost.date}</p>
-    <p class="text-base">{loadedPost.category}</p>
-    {@html showdownContent}
-    <Button mode="outline" href="/">Close</Button>
-  </div>
-</section>
+<Page>
+  <Layout>
+    <LayoutItem>
+      <Heading
+        size="2" 
+      >
+        {loadedPost.id}
+      </Heading>
+
+      <p class="text-sm  mb-4">{loadedPost.date}</p>
+      <p class="text-base">{loadedPost.category}</p>
+      {@html showdownContent}
+      <Button mode="outline" href="/">Close</Button>
+    </LayoutItem>
+  </Layout>
+</Page>
