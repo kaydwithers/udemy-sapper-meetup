@@ -2,11 +2,9 @@
 	let className = "";
 	export { className as class };
 
-	export let py = "py-12  md:py-16";
+	export let mb = "mb-18  md:mb-24";
 </script>
 
-<div 
-	class="flex  -mx-4  {py}  {className}"
->
+<div class="flex  -mx-4  {mb}  {className}">
 	<slot />
 </div>

@@ -115,7 +115,9 @@
     </LayoutItem>
 
     <LayoutItem class="md:w-4/5">
-      <AddPost />
+      <div class="mb-24">
+        <AddPost />
+      </div>
 
       {#if editMode === 'edit'}
         <EditPost id={editedId} on:save={savedPost} on:cancel={cancelEdit} />
@@ -150,7 +152,7 @@
 
           {#each filteredPosts as post (post.id)}
           <div
-            class="w-full  mb-16"
+            class="w-full  mb-24"
             transition:scale
             animate:flip={{ duration: 300 }}
           >

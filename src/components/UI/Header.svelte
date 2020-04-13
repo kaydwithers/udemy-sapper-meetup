@@ -8,8 +8,8 @@
 <header class="bg-violet">
   <Page>
     <Layout 
-      py="py-4" 
-      class="items-center"
+      mb="mb-0"
+      class="items-center  py-4"
     >
       <LayoutItem class="text-center">
         <Heading 
