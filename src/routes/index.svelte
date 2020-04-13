@@ -41,6 +41,7 @@
   import BackToTop from '../components/UI/BackToTop.svelte';
   import Button from "../components/UI/Button.svelte";
   import EditPost from "../components/Post/EditPost.svelte";
+  import Heading from "../components/UI/Heading.svelte";
   import Layout from "../components/UI/Layout.svelte";
   import LayoutItem from "../components/UI/LayoutItem.svelte";
   import LoadingSpinner from "../components/UI/LoadingSpinner.svelte";
@@ -138,6 +139,15 @@
         {/if}
 
         <Layout class="flex-wrap">
+
+          <LayoutItem>
+            <Heading
+              size="2" 
+            >
+              All posts
+            </Heading>
+          </LayoutItem>
+
           {#each filteredPosts as post (post.id)}
           <div
             class="w-full  mb-16"
