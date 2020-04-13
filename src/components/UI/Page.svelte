@@ -1,3 +1,7 @@
-<div class="container  mx-auto  px-4">
+<script>
+	export let full;
+</script>
+
+<div class="mx-auto  px-4  {full ? '' : 'container'}">
 	<slot />
 </div>

@@ -55,7 +55,7 @@
     <p class="text-base  mb-4">{category}</p>
 
     {#if isFav}
-    <Badge>FAVORITE</Badge>
+    <Badge>Favourite</Badge>
     {/if}
   </header>
 
@@ -79,10 +79,10 @@
     {:else}
       <Button
         mode="primary"
-        color={isFav ? null : 'success'}
+        class={isFav ? null : 'text-warning'}
         type="button"
         on:click={toggleFavorite}>
-        {isFav ? 'Unfavorite' : 'Favorite'}
+        {isFav ? 'Unfavourite' : 'Favourite'}
       </Button>
     {/if}
 

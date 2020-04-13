@@ -37,11 +37,14 @@
   import posts from "../store.js";
 
   import AddPost from "../components/Post/AddPost.svelte";
+  import Aside from "../components/UI/Aside.svelte";
+  import BackToTop from '../components/UI/BackToTop.svelte';
   import Button from "../components/UI/Button.svelte";
   import EditPost from "../components/Post/EditPost.svelte";
   import Layout from "../components/UI/Layout.svelte";
   import LayoutItem from "../components/UI/LayoutItem.svelte";
   import LoadingSpinner from "../components/UI/LoadingSpinner.svelte";
+  import Page from "../components/UI/Page.svelte";
   import PostItem from "../components/Post/PostItem.svelte";
   import PostFilter from "../components/Post/PostFilter.svelte";
 
@@ -102,47 +105,63 @@
   <title>All Posts</title>
 </svelte:head>
 
-<AddPost />
-
-{#if editMode === 'edit'}
-  <EditPost id={editedId} on:save={savedPost} on:cancel={cancelEdit} />
-{/if}
-
-{#if isLoading}
-  <LoadingSpinner />
-
-{:else}
-  <!--
-  <Layout>
-    <LayoutItem>
-      <PostFilter on:select={setFilter} />
-      <Button on:click={startAdd}>New Post</Button>
+<Page full>
+  <Layout class="relative">
+    <LayoutItem class="hidden  md:block  md:w-1/5">
+      <div class="sticky  top-0">
+        <Aside />
+      </div>
     </LayoutItem>
-  </Layout>
-  -->
 
-  {#if filteredPosts.length === 0}
-    <p>No posts found, you can start adding some.</p>
-  {/if}
+    <LayoutItem class="md:w-4/5">
+      <AddPost />
 
-  <Layout class="flex-wrap">
-    {#each filteredPosts as post (post.id)}
-    <div
-      class="w-full  mb-16"
-      transition:scale
-      animate:flip={{ duration: 300 }}
-    >
-      <LayoutItem>
-        <PostItem 
-          category={post.category} 
-          content={post.content} 
-          date={post.date} 
-          id={post.id} 
-          isFav={post.isFavorite} 
-          on:edit={startEdit}
-        />
-      </LayoutItem>
-    </div>
-    {/each}
+      {#if editMode === 'edit'}
+        <EditPost id={editedId} on:save={savedPost} on:cancel={cancelEdit} />
+      {/if}
+
+      {#if isLoading}
+        <LoadingSpinner />
+
+      {:else}
+        <!--
+        <Layout>
+          <LayoutItem>
+            <PostFilter on:select={setFilter} />
+            <Button on:click={startAdd}>New Post</Button>
+          </LayoutItem>
+        </Layout>
+        -->
+
+        {#if filteredPosts.length === 0}
+          <p>No posts found, you can start adding some.</p>
+        {/if}
+
+        <Layout class="flex-wrap">
+          {#each filteredPosts as post (post.id)}
+          <div
+            class="w-full  mb-16"
+            transition:scale
+            animate:flip={{ duration: 300 }}
+          >
+            <LayoutItem>
+              <PostItem 
+                category={post.category} 
+                content={post.content} 
+                date={post.date} 
+                id={post.id} 
+                isFav={post.isFavorite} 
+                on:edit={startEdit}
+              />
+            </LayoutItem>
+          </div>
+          {/each}
+        </Layout>
+      {/if}
+
+	    <BackToTop />
+    </LayoutItem>
+
   </Layout>
-{/if}
+
+</Page>

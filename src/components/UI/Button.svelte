@@ -1,5 +1,7 @@
 <script>
-  export let color = null;
+	let className = "";
+	export { className as class };
+
   export let disabled = false;
   export let href = null;
   export let mode = null;
@@ -8,7 +10,7 @@
 
 {#if href}
   <a 
-    class="btn" 
+    class="{className}" 
     href="{href}"
   >
     <slot />
@@ -16,7 +18,7 @@
 
 {:else}
   <button 
-    class="btn  {mode}  {color}" 
+    class="btn  {mode}  {className}" 
     {disabled}
     type="{type}"
     on:click

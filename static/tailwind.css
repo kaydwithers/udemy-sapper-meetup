@@ -26,6 +26,7 @@
 body {
   @apply bg-background text-secondary;
   font-family: var(--font-sans);
+  scroll-behavior: smooth;
 }
 
 a {
