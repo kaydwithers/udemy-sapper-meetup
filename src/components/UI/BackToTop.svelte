@@ -1,6 +1,6 @@
 <script>
   import Button from "./Button.svelte";
-  import ChevronUp from "./icons/Chevronup.svelte";
+  import ChevronUp from "./icons/ChevronUp.svelte";
 </script>
 
 <Button 
