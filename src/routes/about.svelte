@@ -6,19 +6,21 @@
 </script>
 
 <svelte:head>
-	<title>About</title>
+  <title>About</title>
 </svelte:head>
 
 <Page>
-<Layout>
-<LayoutItem>
-<Heading
-  size="2" 
->
-  About this site
-</Heading>
+  <Layout>
+    <LayoutItem>
 
-<p>This website is where I'll put interesting stuff that I learn that I want to remember and access later.</p>
-</LayoutItem>
-</Layout>
+      <Heading
+        size="2" 
+      >
+        About this site
+      </Heading>
+
+      <p>This website is where I'll put interesting stuff that I learn that I want to remember and access later.</p>
+
+    </LayoutItem>
+  </Layout>
 </Page>

@@ -59,7 +59,7 @@
     {/if}
   </header>
 
-  <div class="mb-4">
+  <div class="overflow-hidden  mb-4">
     {@html showdownContent}
   </div>
 

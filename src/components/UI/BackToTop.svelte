@@ -4,8 +4,9 @@
 </script>
 
 <Button 
+  class="flex"
   type="href"
   href="#sapper" 
 >
-  <ChevronUp /> Back to top
+  <ChevronUp class="mr-2" /> Back to top
 </Button>
