@@ -51,9 +51,10 @@
 
   export let fetchedPosts;
 
-  let loadedPosts = [];
+  let categories = [];
   let editMode;
   let editedId;
+  let loadedPosts = [];
   let isLoading;
   let unsubscribe;
 
@@ -62,12 +63,16 @@
   let favsOnly = false;
 
   $: filteredPosts = favsOnly
-    ? loadedPosts.filter(m => m.isFavorite)
+    ? loadedPosts.filter(p => p.isFavorite)
     : loadedPosts;
+
+  $: filteredCategories = 
+    categories.filter((item, index) => categories.indexOf(item) === index);
 
   onMount(() => {
     unsubscribe = posts.subscribe(items => {
       loadedPosts = items;
+      categories = items.map(c => c.category);
     });
     posts.setPosts(fetchedPosts);
   });
@@ -108,14 +113,29 @@
 
 <Page full>
   <Layout class="relative">
-    <LayoutItem class="hidden  md:block  md:w-1/5">
-      <div class="sticky  top-0">
+    <LayoutItem class="hidden  md:block  md:w-1/5  border-r  border-tint-3">
+      <div class="sticky  top-0  pt-8">
         <Aside />
+
+        <ul>
+        {#each filteredCategories as category, i}
+          <li>
+            <Button 
+              class="block  mb-2"
+              mode="bare"
+              type="button"
+              on:click=""
+            >
+              {category}
+            </Button>
+          </li>
+        {/each}
+        </ul>
       </div>
     </LayoutItem>
 
     <LayoutItem class="md:w-4/5">
-      <div class="mb-24">
+      <div class="mb-24  pt-8">
         <AddPost />
       </div>
 
@@ -152,7 +172,7 @@
 
           {#each filteredPosts as post (post.id)}
           <div
-            class="w-full  mb-24"
+            class="w-full  pb-8  border-b  border-tint-3"
             transition:scale
             animate:flip={{ duration: 300 }}
           >

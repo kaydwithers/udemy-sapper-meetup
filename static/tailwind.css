@@ -22,7 +22,6 @@
 
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
 
 body {
   @apply bg-background text-secondary;
@@ -98,6 +97,14 @@ p {
         ;
       }
 
+  .btn.bare {
+    @apply
+      border-none
+      p-0
+      text-primary
+    ;
+  }
+
   .btn:disabled {
     @apply
       bg-tint-6
@@ -137,3 +144,5 @@ pre code {
     text-secondary
   ;
 }
+
+@tailwind utilities;

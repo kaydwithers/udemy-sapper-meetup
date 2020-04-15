@@ -624,6 +624,107 @@ video {
   }
 }
 
+body {
+  background-color: var(--background);
+  color: var(--secondary);
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+}
+
+a {
+  color: var(--primary);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+.btn {
+  border-width: 1px;
+  border-color: var(--secondary);
+  border-radius: 0.25rem;
+  display: inline-flex;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 200ms;
+}
+
+.btn.primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--background);
+}
+
+.btn.primary:hover {
+  background-color: transparent;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn.secondary {
+  background-color: transparent;
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+.btn.secondary:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--background);
+}
+
+.btn.error {
+  background-color: var(--error);
+  border-color: var(--error);
+  color: var(--primary);
+}
+
+.btn.error:hover {
+  background-color: var(--error-dark);
+  border-color: var(--error-dark);
+}
+
+.btn.bare {
+  border-style: none;
+  padding: 0;
+  color: var(--primary);
+}
+
+.btn:disabled {
+  background-color: var(--tint-6);
+  border-color: var(--secondary);
+  cursor: not-allowed;
+  color: var(--secondary);
+}
+
+.btn:disabled:hover {
+  background-color: var(--tint-6);
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+code {
+  display: inline-block;
+  background-color: var(--tint-1);
+  border-width: 1px;
+  border-color: var(--tint-3);
+  border-radius: 0.25rem;
+  color: var(--warning);
+  padding: 0;
+  font-family: Menlo;
+}
+
+pre code {
+  display: block;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  overflow: scroll;
+  color: var(--secondary);
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -11581,101 +11682,6 @@ video {
 
 .duration-1000 {
   transition-duration: 1000ms;
-}
-
-body {
-  background-color: var(--background);
-  color: var(--secondary);
-  font-family: var(--font-sans);
-  scroll-behavior: smooth;
-}
-
-a {
-  color: var(--primary);
-}
-
-p {
-  margin-bottom: 1rem;
-}
-
-.btn {
-  border-width: 1px;
-  border-color: var(--secondary);
-  border-radius: 0.25rem;
-  display: inline-flex;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  transition-property: background-color, border-color, color, fill, stroke;
-  transition-duration: 200ms;
-}
-
-.btn.primary {
-  background-color: var(--primary);
-  border-color: var(--primary);
-  color: var(--background);
-}
-
-.btn.primary:hover {
-  background-color: transparent;
-  border-color: var(--primary);
-  color: var(--primary);
-}
-
-.btn.secondary {
-  background-color: transparent;
-  border-color: var(--secondary);
-  color: var(--secondary);
-}
-
-.btn.secondary:hover {
-  background-color: var(--primary);
-  border-color: var(--primary);
-  color: var(--background);
-}
-
-.btn.error {
-  background-color: var(--error);
-  border-color: var(--error);
-  color: var(--primary);
-}
-
-.btn.error:hover {
-  background-color: var(--error-dark);
-  border-color: var(--error-dark);
-}
-
-.btn:disabled {
-  background-color: var(--tint-6);
-  border-color: var(--secondary);
-  cursor: not-allowed;
-  color: var(--secondary);
-}
-
-.btn:disabled:hover {
-  background-color: var(--tint-6);
-  border-color: var(--secondary);
-  color: var(--secondary);
-}
-
-code {
-  display: inline-block;
-  background-color: var(--tint-1);
-  border-width: 1px;
-  border-color: var(--tint-3);
-  border-radius: 0.25rem;
-  color: var(--warning);
-  padding: 0;
-  font-family: Menlo;
-}
-
-pre code {
-  display: block;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-  overflow: scroll;
-  color: var(--secondary);
 }
 
 @media (min-width: 640px) {

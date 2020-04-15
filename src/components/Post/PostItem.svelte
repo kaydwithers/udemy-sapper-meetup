@@ -48,7 +48,7 @@
 
 <article class="">
   <header>
-    <div class="text-center">
+    <div class="text-center  -mt-3">
       <p class="text-sm  mb-4">{date}</p>
     </div>
 
@@ -86,7 +86,10 @@
       </Button>
     {/if}
 
-    <Button href="/{id}">
+    <Button 
+      class="px-4"
+      href="/{id}"
+    >
       Show Details
     </Button>
   </footer>

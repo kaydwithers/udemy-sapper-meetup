@@ -1,5 +1,5 @@
 <script>
-  import Button from "./Button.svelte";
+  // import Button from "./Button.svelte";
 	import Heading from "./Heading.svelte";
 </script>
 
@@ -9,6 +9,7 @@
   Categories
 </Heading>
 
+<!--
 <nav>
 	<ul>
 		<li class="">
@@ -20,3 +21,4 @@
 		</li>
 	</ul>
 </nav>
+-->

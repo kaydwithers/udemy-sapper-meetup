@@ -5,6 +5,6 @@
   export let width = "";
 </script>
 
-<div class="px-4  w-full  {width}  {className}">
+<div class="px-6  w-full  {width}  {className}">
 	<slot />
 </div>

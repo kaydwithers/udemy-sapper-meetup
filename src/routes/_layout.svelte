@@ -10,6 +10,6 @@
 
 <Nav {segment} />
 
-<main class="py-24">
+<main>
 	<slot></slot>
 </main>

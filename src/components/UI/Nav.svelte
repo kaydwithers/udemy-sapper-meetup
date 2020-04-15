@@ -4,7 +4,7 @@
 	export let segment;
 </script>
 
-<nav>
+<nav class="border-b  border-tint-3">
 	<ul>
 		<li class="inline-block  px-4  py-2">
 			<a 
