@@ -1,30 +1,36 @@
 <script>
-	// import Button from "./Button.svelte";
+	import Button from "./Button.svelte";
 
 	export let segment;
 </script>
 
-<nav class="border-b  border-tint-3">
+<nav class="border-b  border-tint-3  py-2">
 	<ul>
 		<li class="inline-block  px-4  py-2">
-			<a 
+			<Button 
 				aria-current='{segment === undefined ? "page" : undefined}' 
+				class='{segment === undefined ? "success" : ""}' 
 				href='.'
-			>home</a>
+				mode="bare"
+			>home</Button>
 		</li>
 
 		<li class="inline-block  px-4  py-2">
-			<a 
+			<Button 
 				aria-current='{segment === "about" ? "page" : undefined}' 
+				class='{segment === "about" ? "success" : ""}' 
 				href='about'
-			>about</a>
+				mode="bare"
+			>about</Button>
 		</li>
 
 		<li class="inline-block  px-4  py-2">
-			<a 
+			<Button 
 				aria-current='{segment === "contact" ? "page" : undefined}' 
+				class='{segment === "contact" ? "success" : ""}' 
 				href='contact'
-			>contact</a>
+				mode="bare"
+			>contact</Button>
 		</li>
 
 		<!-- 
@@ -32,17 +38,19 @@
 		  the blog data when we hover over the link or tap it on a touchscreen
 		-->
 		<li class="inline-block  px-4  py-2">
-			<a 
+			<Button 
 				rel=prefetch 
 				aria-current='{segment === "blog" ? "page" : undefined}' 
+				class='{segment === "blog" ? "success" : ""}' 
 				href='blog'
-			>blog</a>
+				mode="bare"
+			>blog</Button>
 		</li>
 
 		<li class="inline-block  px-4  py-2">
-			<a 
+			<Button 
 				href='https://github.com/kaydwithers/udemy-sapper-meetup'
-			>github</a>
+			>github</Button>
 		</li>
 	</ul>
 </nav>

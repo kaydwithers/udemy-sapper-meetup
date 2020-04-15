@@ -8,9 +8,10 @@
   --tint-4: #444;
   --tint-5: #555;
   --tint-6: #666;
+  --cyan: #79FFE1;
   --error: #FF0000;
   --error-dark: #E60000;
-  --cyan: #79FFE1;
+  --success: #0070F3;
   --violet: #7928CA;
   --warning: #F5A623;
   --font-sans: 'Inter';
@@ -693,6 +694,12 @@ p {
   color: var(--primary);
 }
 
+a.success,
+  .btn.success {
+  font-weight: 700;
+  color: var(--success);
+}
+
 .btn:disabled {
   background-color: var(--tint-6);
   border-color: var(--secondary);
@@ -1199,6 +1206,10 @@ pre code {
   background-color: var(--tint-6);
 }
 
+.bg-cyan {
+  background-color: var(--cyan);
+}
+
 .bg-error {
   background-color: var(--error);
 }
@@ -1207,8 +1218,8 @@ pre code {
   background-color: var(--error-dark);
 }
 
-.bg-cyan {
-  background-color: var(--cyan);
+.bg-success {
+  background-color: var(--success);
 }
 
 .bg-violet {
@@ -1631,6 +1642,10 @@ pre code {
   background-color: var(--tint-6);
 }
 
+.hover\:bg-cyan:hover {
+  background-color: var(--cyan);
+}
+
 .hover\:bg-error:hover {
   background-color: var(--error);
 }
@@ -1639,8 +1654,8 @@ pre code {
   background-color: var(--error-dark);
 }
 
-.hover\:bg-cyan:hover {
-  background-color: var(--cyan);
+.hover\:bg-success:hover {
+  background-color: var(--success);
 }
 
 .hover\:bg-violet:hover {
@@ -2063,6 +2078,10 @@ pre code {
   background-color: var(--tint-6);
 }
 
+.focus\:bg-cyan:focus {
+  background-color: var(--cyan);
+}
+
 .focus\:bg-error:focus {
   background-color: var(--error);
 }
@@ -2071,8 +2090,8 @@ pre code {
   background-color: var(--error-dark);
 }
 
-.focus\:bg-cyan:focus {
-  background-color: var(--cyan);
+.focus\:bg-success:focus {
+  background-color: var(--success);
 }
 
 .focus\:bg-violet:focus {
@@ -2575,6 +2594,10 @@ pre code {
   border-color: var(--tint-6);
 }
 
+.border-cyan {
+  border-color: var(--cyan);
+}
+
 .border-error {
   border-color: var(--error);
 }
@@ -2583,8 +2606,8 @@ pre code {
   border-color: var(--error-dark);
 }
 
-.border-cyan {
-  border-color: var(--cyan);
+.border-success {
+  border-color: var(--success);
 }
 
 .border-violet {
@@ -3007,6 +3030,10 @@ pre code {
   border-color: var(--tint-6);
 }
 
+.hover\:border-cyan:hover {
+  border-color: var(--cyan);
+}
+
 .hover\:border-error:hover {
   border-color: var(--error);
 }
@@ -3015,8 +3042,8 @@ pre code {
   border-color: var(--error-dark);
 }
 
-.hover\:border-cyan:hover {
-  border-color: var(--cyan);
+.hover\:border-success:hover {
+  border-color: var(--success);
 }
 
 .hover\:border-violet:hover {
@@ -3439,6 +3466,10 @@ pre code {
   border-color: var(--tint-6);
 }
 
+.focus\:border-cyan:focus {
+  border-color: var(--cyan);
+}
+
 .focus\:border-error:focus {
   border-color: var(--error);
 }
@@ -3447,8 +3478,8 @@ pre code {
   border-color: var(--error-dark);
 }
 
-.focus\:border-cyan:focus {
-  border-color: var(--cyan);
+.focus\:border-success:focus {
+  border-color: var(--success);
 }
 
 .focus\:border-violet:focus {
@@ -3816,6 +3847,106 @@ pre code {
 }
 
 .border-l {
+  border-left-width: 1px;
+}
+
+.first\:border-0:first-child {
+  border-width: 0;
+}
+
+.first\:border-2:first-child {
+  border-width: 2px;
+}
+
+.first\:border-4:first-child {
+  border-width: 4px;
+}
+
+.first\:border-8:first-child {
+  border-width: 8px;
+}
+
+.first\:border:first-child {
+  border-width: 1px;
+}
+
+.first\:border-t-0:first-child {
+  border-top-width: 0;
+}
+
+.first\:border-r-0:first-child {
+  border-right-width: 0;
+}
+
+.first\:border-b-0:first-child {
+  border-bottom-width: 0;
+}
+
+.first\:border-l-0:first-child {
+  border-left-width: 0;
+}
+
+.first\:border-t-2:first-child {
+  border-top-width: 2px;
+}
+
+.first\:border-r-2:first-child {
+  border-right-width: 2px;
+}
+
+.first\:border-b-2:first-child {
+  border-bottom-width: 2px;
+}
+
+.first\:border-l-2:first-child {
+  border-left-width: 2px;
+}
+
+.first\:border-t-4:first-child {
+  border-top-width: 4px;
+}
+
+.first\:border-r-4:first-child {
+  border-right-width: 4px;
+}
+
+.first\:border-b-4:first-child {
+  border-bottom-width: 4px;
+}
+
+.first\:border-l-4:first-child {
+  border-left-width: 4px;
+}
+
+.first\:border-t-8:first-child {
+  border-top-width: 8px;
+}
+
+.first\:border-r-8:first-child {
+  border-right-width: 8px;
+}
+
+.first\:border-b-8:first-child {
+  border-bottom-width: 8px;
+}
+
+.first\:border-l-8:first-child {
+  border-left-width: 8px;
+}
+
+.first\:border-t:first-child {
+  border-top-width: 1px;
+}
+
+.first\:border-r:first-child {
+  border-right-width: 1px;
+}
+
+.first\:border-b:first-child {
+  border-bottom-width: 1px;
+}
+
+.first\:border-l:first-child {
   border-left-width: 1px;
 }
 
@@ -6831,6 +6962,10 @@ pre code {
   color: var(--tint-6);
 }
 
+.placeholder-cyan::placeholder {
+  color: var(--cyan);
+}
+
 .placeholder-error::placeholder {
   color: var(--error);
 }
@@ -6839,8 +6974,8 @@ pre code {
   color: var(--error-dark);
 }
 
-.placeholder-cyan::placeholder {
-  color: var(--cyan);
+.placeholder-success::placeholder {
+  color: var(--success);
 }
 
 .placeholder-violet::placeholder {
@@ -7263,6 +7398,10 @@ pre code {
   color: var(--tint-6);
 }
 
+.focus\:placeholder-cyan:focus::placeholder {
+  color: var(--cyan);
+}
+
 .focus\:placeholder-error:focus::placeholder {
   color: var(--error);
 }
@@ -7271,8 +7410,8 @@ pre code {
   color: var(--error-dark);
 }
 
-.focus\:placeholder-cyan:focus::placeholder {
-  color: var(--cyan);
+.focus\:placeholder-success:focus::placeholder {
+  color: var(--success);
 }
 
 .focus\:placeholder-violet:focus::placeholder {
@@ -7969,6 +8108,10 @@ pre code {
   color: var(--tint-6);
 }
 
+.text-cyan {
+  color: var(--cyan);
+}
+
 .text-error {
   color: var(--error);
 }
@@ -7977,8 +8120,8 @@ pre code {
   color: var(--error-dark);
 }
 
-.text-cyan {
-  color: var(--cyan);
+.text-success {
+  color: var(--success);
 }
 
 .text-violet {
@@ -8401,6 +8544,10 @@ pre code {
   color: var(--tint-6);
 }
 
+.hover\:text-cyan:hover {
+  color: var(--cyan);
+}
+
 .hover\:text-error:hover {
   color: var(--error);
 }
@@ -8409,8 +8556,8 @@ pre code {
   color: var(--error-dark);
 }
 
-.hover\:text-cyan:hover {
-  color: var(--cyan);
+.hover\:text-success:hover {
+  color: var(--success);
 }
 
 .hover\:text-violet:hover {
@@ -8833,6 +8980,10 @@ pre code {
   color: var(--tint-6);
 }
 
+.focus\:text-cyan:focus {
+  color: var(--cyan);
+}
+
 .focus\:text-error:focus {
   color: var(--error);
 }
@@ -8841,8 +8992,8 @@ pre code {
   color: var(--error-dark);
 }
 
-.focus\:text-cyan:focus {
-  color: var(--cyan);
+.focus\:text-success:focus {
+  color: var(--success);
 }
 
 .focus\:text-violet:focus {
@@ -12159,6 +12310,10 @@ pre code {
     background-color: var(--tint-6);
   }
 
+  .sm\:bg-cyan {
+    background-color: var(--cyan);
+  }
+
   .sm\:bg-error {
     background-color: var(--error);
   }
@@ -12167,8 +12322,8 @@ pre code {
     background-color: var(--error-dark);
   }
 
-  .sm\:bg-cyan {
-    background-color: var(--cyan);
+  .sm\:bg-success {
+    background-color: var(--success);
   }
 
   .sm\:bg-violet {
@@ -12591,6 +12746,10 @@ pre code {
     background-color: var(--tint-6);
   }
 
+  .sm\:hover\:bg-cyan:hover {
+    background-color: var(--cyan);
+  }
+
   .sm\:hover\:bg-error:hover {
     background-color: var(--error);
   }
@@ -12599,8 +12758,8 @@ pre code {
     background-color: var(--error-dark);
   }
 
-  .sm\:hover\:bg-cyan:hover {
-    background-color: var(--cyan);
+  .sm\:hover\:bg-success:hover {
+    background-color: var(--success);
   }
 
   .sm\:hover\:bg-violet:hover {
@@ -13023,6 +13182,10 @@ pre code {
     background-color: var(--tint-6);
   }
 
+  .sm\:focus\:bg-cyan:focus {
+    background-color: var(--cyan);
+  }
+
   .sm\:focus\:bg-error:focus {
     background-color: var(--error);
   }
@@ -13031,8 +13194,8 @@ pre code {
     background-color: var(--error-dark);
   }
 
-  .sm\:focus\:bg-cyan:focus {
-    background-color: var(--cyan);
+  .sm\:focus\:bg-success:focus {
+    background-color: var(--success);
   }
 
   .sm\:focus\:bg-violet:focus {
@@ -13535,6 +13698,10 @@ pre code {
     border-color: var(--tint-6);
   }
 
+  .sm\:border-cyan {
+    border-color: var(--cyan);
+  }
+
   .sm\:border-error {
     border-color: var(--error);
   }
@@ -13543,8 +13710,8 @@ pre code {
     border-color: var(--error-dark);
   }
 
-  .sm\:border-cyan {
-    border-color: var(--cyan);
+  .sm\:border-success {
+    border-color: var(--success);
   }
 
   .sm\:border-violet {
@@ -13967,6 +14134,10 @@ pre code {
     border-color: var(--tint-6);
   }
 
+  .sm\:hover\:border-cyan:hover {
+    border-color: var(--cyan);
+  }
+
   .sm\:hover\:border-error:hover {
     border-color: var(--error);
   }
@@ -13975,8 +14146,8 @@ pre code {
     border-color: var(--error-dark);
   }
 
-  .sm\:hover\:border-cyan:hover {
-    border-color: var(--cyan);
+  .sm\:hover\:border-success:hover {
+    border-color: var(--success);
   }
 
   .sm\:hover\:border-violet:hover {
@@ -14399,6 +14570,10 @@ pre code {
     border-color: var(--tint-6);
   }
 
+  .sm\:focus\:border-cyan:focus {
+    border-color: var(--cyan);
+  }
+
   .sm\:focus\:border-error:focus {
     border-color: var(--error);
   }
@@ -14407,8 +14582,8 @@ pre code {
     border-color: var(--error-dark);
   }
 
-  .sm\:focus\:border-cyan:focus {
-    border-color: var(--cyan);
+  .sm\:focus\:border-success:focus {
+    border-color: var(--success);
   }
 
   .sm\:focus\:border-violet:focus {
@@ -14776,6 +14951,106 @@ pre code {
   }
 
   .sm\:border-l {
+    border-left-width: 1px;
+  }
+
+  .sm\:first\:border-0:first-child {
+    border-width: 0;
+  }
+
+  .sm\:first\:border-2:first-child {
+    border-width: 2px;
+  }
+
+  .sm\:first\:border-4:first-child {
+    border-width: 4px;
+  }
+
+  .sm\:first\:border-8:first-child {
+    border-width: 8px;
+  }
+
+  .sm\:first\:border:first-child {
+    border-width: 1px;
+  }
+
+  .sm\:first\:border-t-0:first-child {
+    border-top-width: 0;
+  }
+
+  .sm\:first\:border-r-0:first-child {
+    border-right-width: 0;
+  }
+
+  .sm\:first\:border-b-0:first-child {
+    border-bottom-width: 0;
+  }
+
+  .sm\:first\:border-l-0:first-child {
+    border-left-width: 0;
+  }
+
+  .sm\:first\:border-t-2:first-child {
+    border-top-width: 2px;
+  }
+
+  .sm\:first\:border-r-2:first-child {
+    border-right-width: 2px;
+  }
+
+  .sm\:first\:border-b-2:first-child {
+    border-bottom-width: 2px;
+  }
+
+  .sm\:first\:border-l-2:first-child {
+    border-left-width: 2px;
+  }
+
+  .sm\:first\:border-t-4:first-child {
+    border-top-width: 4px;
+  }
+
+  .sm\:first\:border-r-4:first-child {
+    border-right-width: 4px;
+  }
+
+  .sm\:first\:border-b-4:first-child {
+    border-bottom-width: 4px;
+  }
+
+  .sm\:first\:border-l-4:first-child {
+    border-left-width: 4px;
+  }
+
+  .sm\:first\:border-t-8:first-child {
+    border-top-width: 8px;
+  }
+
+  .sm\:first\:border-r-8:first-child {
+    border-right-width: 8px;
+  }
+
+  .sm\:first\:border-b-8:first-child {
+    border-bottom-width: 8px;
+  }
+
+  .sm\:first\:border-l-8:first-child {
+    border-left-width: 8px;
+  }
+
+  .sm\:first\:border-t:first-child {
+    border-top-width: 1px;
+  }
+
+  .sm\:first\:border-r:first-child {
+    border-right-width: 1px;
+  }
+
+  .sm\:first\:border-b:first-child {
+    border-bottom-width: 1px;
+  }
+
+  .sm\:first\:border-l:first-child {
     border-left-width: 1px;
   }
 
@@ -17791,6 +18066,10 @@ pre code {
     color: var(--tint-6);
   }
 
+  .sm\:placeholder-cyan::placeholder {
+    color: var(--cyan);
+  }
+
   .sm\:placeholder-error::placeholder {
     color: var(--error);
   }
@@ -17799,8 +18078,8 @@ pre code {
     color: var(--error-dark);
   }
 
-  .sm\:placeholder-cyan::placeholder {
-    color: var(--cyan);
+  .sm\:placeholder-success::placeholder {
+    color: var(--success);
   }
 
   .sm\:placeholder-violet::placeholder {
@@ -18223,6 +18502,10 @@ pre code {
     color: var(--tint-6);
   }
 
+  .sm\:focus\:placeholder-cyan:focus::placeholder {
+    color: var(--cyan);
+  }
+
   .sm\:focus\:placeholder-error:focus::placeholder {
     color: var(--error);
   }
@@ -18231,8 +18514,8 @@ pre code {
     color: var(--error-dark);
   }
 
-  .sm\:focus\:placeholder-cyan:focus::placeholder {
-    color: var(--cyan);
+  .sm\:focus\:placeholder-success:focus::placeholder {
+    color: var(--success);
   }
 
   .sm\:focus\:placeholder-violet:focus::placeholder {
@@ -18929,6 +19212,10 @@ pre code {
     color: var(--tint-6);
   }
 
+  .sm\:text-cyan {
+    color: var(--cyan);
+  }
+
   .sm\:text-error {
     color: var(--error);
   }
@@ -18937,8 +19224,8 @@ pre code {
     color: var(--error-dark);
   }
 
-  .sm\:text-cyan {
-    color: var(--cyan);
+  .sm\:text-success {
+    color: var(--success);
   }
 
   .sm\:text-violet {
@@ -19361,6 +19648,10 @@ pre code {
     color: var(--tint-6);
   }
 
+  .sm\:hover\:text-cyan:hover {
+    color: var(--cyan);
+  }
+
   .sm\:hover\:text-error:hover {
     color: var(--error);
   }
@@ -19369,8 +19660,8 @@ pre code {
     color: var(--error-dark);
   }
 
-  .sm\:hover\:text-cyan:hover {
-    color: var(--cyan);
+  .sm\:hover\:text-success:hover {
+    color: var(--success);
   }
 
   .sm\:hover\:text-violet:hover {
@@ -19793,6 +20084,10 @@ pre code {
     color: var(--tint-6);
   }
 
+  .sm\:focus\:text-cyan:focus {
+    color: var(--cyan);
+  }
+
   .sm\:focus\:text-error:focus {
     color: var(--error);
   }
@@ -19801,8 +20096,8 @@ pre code {
     color: var(--error-dark);
   }
 
-  .sm\:focus\:text-cyan:focus {
-    color: var(--cyan);
+  .sm\:focus\:text-success:focus {
+    color: var(--success);
   }
 
   .sm\:focus\:text-violet:focus {
@@ -23120,6 +23415,10 @@ pre code {
     background-color: var(--tint-6);
   }
 
+  .md\:bg-cyan {
+    background-color: var(--cyan);
+  }
+
   .md\:bg-error {
     background-color: var(--error);
   }
@@ -23128,8 +23427,8 @@ pre code {
     background-color: var(--error-dark);
   }
 
-  .md\:bg-cyan {
-    background-color: var(--cyan);
+  .md\:bg-success {
+    background-color: var(--success);
   }
 
   .md\:bg-violet {
@@ -23552,6 +23851,10 @@ pre code {
     background-color: var(--tint-6);
   }
 
+  .md\:hover\:bg-cyan:hover {
+    background-color: var(--cyan);
+  }
+
   .md\:hover\:bg-error:hover {
     background-color: var(--error);
   }
@@ -23560,8 +23863,8 @@ pre code {
     background-color: var(--error-dark);
   }
 
-  .md\:hover\:bg-cyan:hover {
-    background-color: var(--cyan);
+  .md\:hover\:bg-success:hover {
+    background-color: var(--success);
   }
 
   .md\:hover\:bg-violet:hover {
@@ -23984,6 +24287,10 @@ pre code {
     background-color: var(--tint-6);
   }
 
+  .md\:focus\:bg-cyan:focus {
+    background-color: var(--cyan);
+  }
+
   .md\:focus\:bg-error:focus {
     background-color: var(--error);
   }
@@ -23992,8 +24299,8 @@ pre code {
     background-color: var(--error-dark);
   }
 
-  .md\:focus\:bg-cyan:focus {
-    background-color: var(--cyan);
+  .md\:focus\:bg-success:focus {
+    background-color: var(--success);
   }
 
   .md\:focus\:bg-violet:focus {
@@ -24496,6 +24803,10 @@ pre code {
     border-color: var(--tint-6);
   }
 
+  .md\:border-cyan {
+    border-color: var(--cyan);
+  }
+
   .md\:border-error {
     border-color: var(--error);
   }
@@ -24504,8 +24815,8 @@ pre code {
     border-color: var(--error-dark);
   }
 
-  .md\:border-cyan {
-    border-color: var(--cyan);
+  .md\:border-success {
+    border-color: var(--success);
   }
 
   .md\:border-violet {
@@ -24928,6 +25239,10 @@ pre code {
     border-color: var(--tint-6);
   }
 
+  .md\:hover\:border-cyan:hover {
+    border-color: var(--cyan);
+  }
+
   .md\:hover\:border-error:hover {
     border-color: var(--error);
   }
@@ -24936,8 +25251,8 @@ pre code {
     border-color: var(--error-dark);
   }
 
-  .md\:hover\:border-cyan:hover {
-    border-color: var(--cyan);
+  .md\:hover\:border-success:hover {
+    border-color: var(--success);
   }
 
   .md\:hover\:border-violet:hover {
@@ -25360,6 +25675,10 @@ pre code {
     border-color: var(--tint-6);
   }
 
+  .md\:focus\:border-cyan:focus {
+    border-color: var(--cyan);
+  }
+
   .md\:focus\:border-error:focus {
     border-color: var(--error);
   }
@@ -25368,8 +25687,8 @@ pre code {
     border-color: var(--error-dark);
   }
 
-  .md\:focus\:border-cyan:focus {
-    border-color: var(--cyan);
+  .md\:focus\:border-success:focus {
+    border-color: var(--success);
   }
 
   .md\:focus\:border-violet:focus {
@@ -25737,6 +26056,106 @@ pre code {
   }
 
   .md\:border-l {
+    border-left-width: 1px;
+  }
+
+  .md\:first\:border-0:first-child {
+    border-width: 0;
+  }
+
+  .md\:first\:border-2:first-child {
+    border-width: 2px;
+  }
+
+  .md\:first\:border-4:first-child {
+    border-width: 4px;
+  }
+
+  .md\:first\:border-8:first-child {
+    border-width: 8px;
+  }
+
+  .md\:first\:border:first-child {
+    border-width: 1px;
+  }
+
+  .md\:first\:border-t-0:first-child {
+    border-top-width: 0;
+  }
+
+  .md\:first\:border-r-0:first-child {
+    border-right-width: 0;
+  }
+
+  .md\:first\:border-b-0:first-child {
+    border-bottom-width: 0;
+  }
+
+  .md\:first\:border-l-0:first-child {
+    border-left-width: 0;
+  }
+
+  .md\:first\:border-t-2:first-child {
+    border-top-width: 2px;
+  }
+
+  .md\:first\:border-r-2:first-child {
+    border-right-width: 2px;
+  }
+
+  .md\:first\:border-b-2:first-child {
+    border-bottom-width: 2px;
+  }
+
+  .md\:first\:border-l-2:first-child {
+    border-left-width: 2px;
+  }
+
+  .md\:first\:border-t-4:first-child {
+    border-top-width: 4px;
+  }
+
+  .md\:first\:border-r-4:first-child {
+    border-right-width: 4px;
+  }
+
+  .md\:first\:border-b-4:first-child {
+    border-bottom-width: 4px;
+  }
+
+  .md\:first\:border-l-4:first-child {
+    border-left-width: 4px;
+  }
+
+  .md\:first\:border-t-8:first-child {
+    border-top-width: 8px;
+  }
+
+  .md\:first\:border-r-8:first-child {
+    border-right-width: 8px;
+  }
+
+  .md\:first\:border-b-8:first-child {
+    border-bottom-width: 8px;
+  }
+
+  .md\:first\:border-l-8:first-child {
+    border-left-width: 8px;
+  }
+
+  .md\:first\:border-t:first-child {
+    border-top-width: 1px;
+  }
+
+  .md\:first\:border-r:first-child {
+    border-right-width: 1px;
+  }
+
+  .md\:first\:border-b:first-child {
+    border-bottom-width: 1px;
+  }
+
+  .md\:first\:border-l:first-child {
     border-left-width: 1px;
   }
 
@@ -28752,6 +29171,10 @@ pre code {
     color: var(--tint-6);
   }
 
+  .md\:placeholder-cyan::placeholder {
+    color: var(--cyan);
+  }
+
   .md\:placeholder-error::placeholder {
     color: var(--error);
   }
@@ -28760,8 +29183,8 @@ pre code {
     color: var(--error-dark);
   }
 
-  .md\:placeholder-cyan::placeholder {
-    color: var(--cyan);
+  .md\:placeholder-success::placeholder {
+    color: var(--success);
   }
 
   .md\:placeholder-violet::placeholder {
@@ -29184,6 +29607,10 @@ pre code {
     color: var(--tint-6);
   }
 
+  .md\:focus\:placeholder-cyan:focus::placeholder {
+    color: var(--cyan);
+  }
+
   .md\:focus\:placeholder-error:focus::placeholder {
     color: var(--error);
   }
@@ -29192,8 +29619,8 @@ pre code {
     color: var(--error-dark);
   }
 
-  .md\:focus\:placeholder-cyan:focus::placeholder {
-    color: var(--cyan);
+  .md\:focus\:placeholder-success:focus::placeholder {
+    color: var(--success);
   }
 
   .md\:focus\:placeholder-violet:focus::placeholder {
@@ -29890,6 +30317,10 @@ pre code {
     color: var(--tint-6);
   }
 
+  .md\:text-cyan {
+    color: var(--cyan);
+  }
+
   .md\:text-error {
     color: var(--error);
   }
@@ -29898,8 +30329,8 @@ pre code {
     color: var(--error-dark);
   }
 
-  .md\:text-cyan {
-    color: var(--cyan);
+  .md\:text-success {
+    color: var(--success);
   }
 
   .md\:text-violet {
@@ -30322,6 +30753,10 @@ pre code {
     color: var(--tint-6);
   }
 
+  .md\:hover\:text-cyan:hover {
+    color: var(--cyan);
+  }
+
   .md\:hover\:text-error:hover {
     color: var(--error);
   }
@@ -30330,8 +30765,8 @@ pre code {
     color: var(--error-dark);
   }
 
-  .md\:hover\:text-cyan:hover {
-    color: var(--cyan);
+  .md\:hover\:text-success:hover {
+    color: var(--success);
   }
 
   .md\:hover\:text-violet:hover {
@@ -30754,6 +31189,10 @@ pre code {
     color: var(--tint-6);
   }
 
+  .md\:focus\:text-cyan:focus {
+    color: var(--cyan);
+  }
+
   .md\:focus\:text-error:focus {
     color: var(--error);
   }
@@ -30762,8 +31201,8 @@ pre code {
     color: var(--error-dark);
   }
 
-  .md\:focus\:text-cyan:focus {
-    color: var(--cyan);
+  .md\:focus\:text-success:focus {
+    color: var(--success);
   }
 
   .md\:focus\:text-violet:focus {
@@ -34081,6 +34520,10 @@ pre code {
     background-color: var(--tint-6);
   }
 
+  .lg\:bg-cyan {
+    background-color: var(--cyan);
+  }
+
   .lg\:bg-error {
     background-color: var(--error);
   }
@@ -34089,8 +34532,8 @@ pre code {
     background-color: var(--error-dark);
   }
 
-  .lg\:bg-cyan {
-    background-color: var(--cyan);
+  .lg\:bg-success {
+    background-color: var(--success);
   }
 
   .lg\:bg-violet {
@@ -34513,6 +34956,10 @@ pre code {
     background-color: var(--tint-6);
   }
 
+  .lg\:hover\:bg-cyan:hover {
+    background-color: var(--cyan);
+  }
+
   .lg\:hover\:bg-error:hover {
     background-color: var(--error);
   }
@@ -34521,8 +34968,8 @@ pre code {
     background-color: var(--error-dark);
   }
 
-  .lg\:hover\:bg-cyan:hover {
-    background-color: var(--cyan);
+  .lg\:hover\:bg-success:hover {
+    background-color: var(--success);
   }
 
   .lg\:hover\:bg-violet:hover {
@@ -34945,6 +35392,10 @@ pre code {
     background-color: var(--tint-6);
   }
 
+  .lg\:focus\:bg-cyan:focus {
+    background-color: var(--cyan);
+  }
+
   .lg\:focus\:bg-error:focus {
     background-color: var(--error);
   }
@@ -34953,8 +35404,8 @@ pre code {
     background-color: var(--error-dark);
   }
 
-  .lg\:focus\:bg-cyan:focus {
-    background-color: var(--cyan);
+  .lg\:focus\:bg-success:focus {
+    background-color: var(--success);
   }
 
   .lg\:focus\:bg-violet:focus {
@@ -35457,6 +35908,10 @@ pre code {
     border-color: var(--tint-6);
   }
 
+  .lg\:border-cyan {
+    border-color: var(--cyan);
+  }
+
   .lg\:border-error {
     border-color: var(--error);
   }
@@ -35465,8 +35920,8 @@ pre code {
     border-color: var(--error-dark);
   }
 
-  .lg\:border-cyan {
-    border-color: var(--cyan);
+  .lg\:border-success {
+    border-color: var(--success);
   }
 
   .lg\:border-violet {
@@ -35889,6 +36344,10 @@ pre code {
     border-color: var(--tint-6);
   }
 
+  .lg\:hover\:border-cyan:hover {
+    border-color: var(--cyan);
+  }
+
   .lg\:hover\:border-error:hover {
     border-color: var(--error);
   }
@@ -35897,8 +36356,8 @@ pre code {
     border-color: var(--error-dark);
   }
 
-  .lg\:hover\:border-cyan:hover {
-    border-color: var(--cyan);
+  .lg\:hover\:border-success:hover {
+    border-color: var(--success);
   }
 
   .lg\:hover\:border-violet:hover {
@@ -36321,6 +36780,10 @@ pre code {
     border-color: var(--tint-6);
   }
 
+  .lg\:focus\:border-cyan:focus {
+    border-color: var(--cyan);
+  }
+
   .lg\:focus\:border-error:focus {
     border-color: var(--error);
   }
@@ -36329,8 +36792,8 @@ pre code {
     border-color: var(--error-dark);
   }
 
-  .lg\:focus\:border-cyan:focus {
-    border-color: var(--cyan);
+  .lg\:focus\:border-success:focus {
+    border-color: var(--success);
   }
 
   .lg\:focus\:border-violet:focus {
@@ -36698,6 +37161,106 @@ pre code {
   }
 
   .lg\:border-l {
+    border-left-width: 1px;
+  }
+
+  .lg\:first\:border-0:first-child {
+    border-width: 0;
+  }
+
+  .lg\:first\:border-2:first-child {
+    border-width: 2px;
+  }
+
+  .lg\:first\:border-4:first-child {
+    border-width: 4px;
+  }
+
+  .lg\:first\:border-8:first-child {
+    border-width: 8px;
+  }
+
+  .lg\:first\:border:first-child {
+    border-width: 1px;
+  }
+
+  .lg\:first\:border-t-0:first-child {
+    border-top-width: 0;
+  }
+
+  .lg\:first\:border-r-0:first-child {
+    border-right-width: 0;
+  }
+
+  .lg\:first\:border-b-0:first-child {
+    border-bottom-width: 0;
+  }
+
+  .lg\:first\:border-l-0:first-child {
+    border-left-width: 0;
+  }
+
+  .lg\:first\:border-t-2:first-child {
+    border-top-width: 2px;
+  }
+
+  .lg\:first\:border-r-2:first-child {
+    border-right-width: 2px;
+  }
+
+  .lg\:first\:border-b-2:first-child {
+    border-bottom-width: 2px;
+  }
+
+  .lg\:first\:border-l-2:first-child {
+    border-left-width: 2px;
+  }
+
+  .lg\:first\:border-t-4:first-child {
+    border-top-width: 4px;
+  }
+
+  .lg\:first\:border-r-4:first-child {
+    border-right-width: 4px;
+  }
+
+  .lg\:first\:border-b-4:first-child {
+    border-bottom-width: 4px;
+  }
+
+  .lg\:first\:border-l-4:first-child {
+    border-left-width: 4px;
+  }
+
+  .lg\:first\:border-t-8:first-child {
+    border-top-width: 8px;
+  }
+
+  .lg\:first\:border-r-8:first-child {
+    border-right-width: 8px;
+  }
+
+  .lg\:first\:border-b-8:first-child {
+    border-bottom-width: 8px;
+  }
+
+  .lg\:first\:border-l-8:first-child {
+    border-left-width: 8px;
+  }
+
+  .lg\:first\:border-t:first-child {
+    border-top-width: 1px;
+  }
+
+  .lg\:first\:border-r:first-child {
+    border-right-width: 1px;
+  }
+
+  .lg\:first\:border-b:first-child {
+    border-bottom-width: 1px;
+  }
+
+  .lg\:first\:border-l:first-child {
     border-left-width: 1px;
   }
 
@@ -39713,6 +40276,10 @@ pre code {
     color: var(--tint-6);
   }
 
+  .lg\:placeholder-cyan::placeholder {
+    color: var(--cyan);
+  }
+
   .lg\:placeholder-error::placeholder {
     color: var(--error);
   }
@@ -39721,8 +40288,8 @@ pre code {
     color: var(--error-dark);
   }
 
-  .lg\:placeholder-cyan::placeholder {
-    color: var(--cyan);
+  .lg\:placeholder-success::placeholder {
+    color: var(--success);
   }
 
   .lg\:placeholder-violet::placeholder {
@@ -40145,6 +40712,10 @@ pre code {
     color: var(--tint-6);
   }
 
+  .lg\:focus\:placeholder-cyan:focus::placeholder {
+    color: var(--cyan);
+  }
+
   .lg\:focus\:placeholder-error:focus::placeholder {
     color: var(--error);
   }
@@ -40153,8 +40724,8 @@ pre code {
     color: var(--error-dark);
   }
 
-  .lg\:focus\:placeholder-cyan:focus::placeholder {
-    color: var(--cyan);
+  .lg\:focus\:placeholder-success:focus::placeholder {
+    color: var(--success);
   }
 
   .lg\:focus\:placeholder-violet:focus::placeholder {
@@ -40851,6 +41422,10 @@ pre code {
     color: var(--tint-6);
   }
 
+  .lg\:text-cyan {
+    color: var(--cyan);
+  }
+
   .lg\:text-error {
     color: var(--error);
   }
@@ -40859,8 +41434,8 @@ pre code {
     color: var(--error-dark);
   }
 
-  .lg\:text-cyan {
-    color: var(--cyan);
+  .lg\:text-success {
+    color: var(--success);
   }
 
   .lg\:text-violet {
@@ -41283,6 +41858,10 @@ pre code {
     color: var(--tint-6);
   }
 
+  .lg\:hover\:text-cyan:hover {
+    color: var(--cyan);
+  }
+
   .lg\:hover\:text-error:hover {
     color: var(--error);
   }
@@ -41291,8 +41870,8 @@ pre code {
     color: var(--error-dark);
   }
 
-  .lg\:hover\:text-cyan:hover {
-    color: var(--cyan);
+  .lg\:hover\:text-success:hover {
+    color: var(--success);
   }
 
   .lg\:hover\:text-violet:hover {
@@ -41715,6 +42294,10 @@ pre code {
     color: var(--tint-6);
   }
 
+  .lg\:focus\:text-cyan:focus {
+    color: var(--cyan);
+  }
+
   .lg\:focus\:text-error:focus {
     color: var(--error);
   }
@@ -41723,8 +42306,8 @@ pre code {
     color: var(--error-dark);
   }
 
-  .lg\:focus\:text-cyan:focus {
-    color: var(--cyan);
+  .lg\:focus\:text-success:focus {
+    color: var(--success);
   }
 
   .lg\:focus\:text-violet:focus {
@@ -45042,6 +45625,10 @@ pre code {
     background-color: var(--tint-6);
   }
 
+  .xl\:bg-cyan {
+    background-color: var(--cyan);
+  }
+
   .xl\:bg-error {
     background-color: var(--error);
   }
@@ -45050,8 +45637,8 @@ pre code {
     background-color: var(--error-dark);
   }
 
-  .xl\:bg-cyan {
-    background-color: var(--cyan);
+  .xl\:bg-success {
+    background-color: var(--success);
   }
 
   .xl\:bg-violet {
@@ -45474,6 +46061,10 @@ pre code {
     background-color: var(--tint-6);
   }
 
+  .xl\:hover\:bg-cyan:hover {
+    background-color: var(--cyan);
+  }
+
   .xl\:hover\:bg-error:hover {
     background-color: var(--error);
   }
@@ -45482,8 +46073,8 @@ pre code {
     background-color: var(--error-dark);
   }
 
-  .xl\:hover\:bg-cyan:hover {
-    background-color: var(--cyan);
+  .xl\:hover\:bg-success:hover {
+    background-color: var(--success);
   }
 
   .xl\:hover\:bg-violet:hover {
@@ -45906,6 +46497,10 @@ pre code {
     background-color: var(--tint-6);
   }
 
+  .xl\:focus\:bg-cyan:focus {
+    background-color: var(--cyan);
+  }
+
   .xl\:focus\:bg-error:focus {
     background-color: var(--error);
   }
@@ -45914,8 +46509,8 @@ pre code {
     background-color: var(--error-dark);
   }
 
-  .xl\:focus\:bg-cyan:focus {
-    background-color: var(--cyan);
+  .xl\:focus\:bg-success:focus {
+    background-color: var(--success);
   }
 
   .xl\:focus\:bg-violet:focus {
@@ -46418,6 +47013,10 @@ pre code {
     border-color: var(--tint-6);
   }
 
+  .xl\:border-cyan {
+    border-color: var(--cyan);
+  }
+
   .xl\:border-error {
     border-color: var(--error);
   }
@@ -46426,8 +47025,8 @@ pre code {
     border-color: var(--error-dark);
   }
 
-  .xl\:border-cyan {
-    border-color: var(--cyan);
+  .xl\:border-success {
+    border-color: var(--success);
   }
 
   .xl\:border-violet {
@@ -46850,6 +47449,10 @@ pre code {
     border-color: var(--tint-6);
   }
 
+  .xl\:hover\:border-cyan:hover {
+    border-color: var(--cyan);
+  }
+
   .xl\:hover\:border-error:hover {
     border-color: var(--error);
   }
@@ -46858,8 +47461,8 @@ pre code {
     border-color: var(--error-dark);
   }
 
-  .xl\:hover\:border-cyan:hover {
-    border-color: var(--cyan);
+  .xl\:hover\:border-success:hover {
+    border-color: var(--success);
   }
 
   .xl\:hover\:border-violet:hover {
@@ -47282,6 +47885,10 @@ pre code {
     border-color: var(--tint-6);
   }
 
+  .xl\:focus\:border-cyan:focus {
+    border-color: var(--cyan);
+  }
+
   .xl\:focus\:border-error:focus {
     border-color: var(--error);
   }
@@ -47290,8 +47897,8 @@ pre code {
     border-color: var(--error-dark);
   }
 
-  .xl\:focus\:border-cyan:focus {
-    border-color: var(--cyan);
+  .xl\:focus\:border-success:focus {
+    border-color: var(--success);
   }
 
   .xl\:focus\:border-violet:focus {
@@ -47659,6 +48266,106 @@ pre code {
   }
 
   .xl\:border-l {
+    border-left-width: 1px;
+  }
+
+  .xl\:first\:border-0:first-child {
+    border-width: 0;
+  }
+
+  .xl\:first\:border-2:first-child {
+    border-width: 2px;
+  }
+
+  .xl\:first\:border-4:first-child {
+    border-width: 4px;
+  }
+
+  .xl\:first\:border-8:first-child {
+    border-width: 8px;
+  }
+
+  .xl\:first\:border:first-child {
+    border-width: 1px;
+  }
+
+  .xl\:first\:border-t-0:first-child {
+    border-top-width: 0;
+  }
+
+  .xl\:first\:border-r-0:first-child {
+    border-right-width: 0;
+  }
+
+  .xl\:first\:border-b-0:first-child {
+    border-bottom-width: 0;
+  }
+
+  .xl\:first\:border-l-0:first-child {
+    border-left-width: 0;
+  }
+
+  .xl\:first\:border-t-2:first-child {
+    border-top-width: 2px;
+  }
+
+  .xl\:first\:border-r-2:first-child {
+    border-right-width: 2px;
+  }
+
+  .xl\:first\:border-b-2:first-child {
+    border-bottom-width: 2px;
+  }
+
+  .xl\:first\:border-l-2:first-child {
+    border-left-width: 2px;
+  }
+
+  .xl\:first\:border-t-4:first-child {
+    border-top-width: 4px;
+  }
+
+  .xl\:first\:border-r-4:first-child {
+    border-right-width: 4px;
+  }
+
+  .xl\:first\:border-b-4:first-child {
+    border-bottom-width: 4px;
+  }
+
+  .xl\:first\:border-l-4:first-child {
+    border-left-width: 4px;
+  }
+
+  .xl\:first\:border-t-8:first-child {
+    border-top-width: 8px;
+  }
+
+  .xl\:first\:border-r-8:first-child {
+    border-right-width: 8px;
+  }
+
+  .xl\:first\:border-b-8:first-child {
+    border-bottom-width: 8px;
+  }
+
+  .xl\:first\:border-l-8:first-child {
+    border-left-width: 8px;
+  }
+
+  .xl\:first\:border-t:first-child {
+    border-top-width: 1px;
+  }
+
+  .xl\:first\:border-r:first-child {
+    border-right-width: 1px;
+  }
+
+  .xl\:first\:border-b:first-child {
+    border-bottom-width: 1px;
+  }
+
+  .xl\:first\:border-l:first-child {
     border-left-width: 1px;
   }
 
@@ -50674,6 +51381,10 @@ pre code {
     color: var(--tint-6);
   }
 
+  .xl\:placeholder-cyan::placeholder {
+    color: var(--cyan);
+  }
+
   .xl\:placeholder-error::placeholder {
     color: var(--error);
   }
@@ -50682,8 +51393,8 @@ pre code {
     color: var(--error-dark);
   }
 
-  .xl\:placeholder-cyan::placeholder {
-    color: var(--cyan);
+  .xl\:placeholder-success::placeholder {
+    color: var(--success);
   }
 
   .xl\:placeholder-violet::placeholder {
@@ -51106,6 +51817,10 @@ pre code {
     color: var(--tint-6);
   }
 
+  .xl\:focus\:placeholder-cyan:focus::placeholder {
+    color: var(--cyan);
+  }
+
   .xl\:focus\:placeholder-error:focus::placeholder {
     color: var(--error);
   }
@@ -51114,8 +51829,8 @@ pre code {
     color: var(--error-dark);
   }
 
-  .xl\:focus\:placeholder-cyan:focus::placeholder {
-    color: var(--cyan);
+  .xl\:focus\:placeholder-success:focus::placeholder {
+    color: var(--success);
   }
 
   .xl\:focus\:placeholder-violet:focus::placeholder {
@@ -51812,6 +52527,10 @@ pre code {
     color: var(--tint-6);
   }
 
+  .xl\:text-cyan {
+    color: var(--cyan);
+  }
+
   .xl\:text-error {
     color: var(--error);
   }
@@ -51820,8 +52539,8 @@ pre code {
     color: var(--error-dark);
   }
 
-  .xl\:text-cyan {
-    color: var(--cyan);
+  .xl\:text-success {
+    color: var(--success);
   }
 
   .xl\:text-violet {
@@ -52244,6 +52963,10 @@ pre code {
     color: var(--tint-6);
   }
 
+  .xl\:hover\:text-cyan:hover {
+    color: var(--cyan);
+  }
+
   .xl\:hover\:text-error:hover {
     color: var(--error);
   }
@@ -52252,8 +52975,8 @@ pre code {
     color: var(--error-dark);
   }
 
-  .xl\:hover\:text-cyan:hover {
-    color: var(--cyan);
+  .xl\:hover\:text-success:hover {
+    color: var(--success);
   }
 
   .xl\:hover\:text-violet:hover {
@@ -52676,6 +53399,10 @@ pre code {
     color: var(--tint-6);
   }
 
+  .xl\:focus\:text-cyan:focus {
+    color: var(--cyan);
+  }
+
   .xl\:focus\:text-error:focus {
     color: var(--error);
   }
@@ -52684,8 +53411,8 @@ pre code {
     color: var(--error-dark);
   }
 
-  .xl\:focus\:text-cyan:focus {
-    color: var(--cyan);
+  .xl\:focus\:text-success:focus {
+    color: var(--success);
   }
 
   .xl\:focus\:text-violet:focus {

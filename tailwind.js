@@ -139,10 +139,10 @@ module.exports = {
       'tint-5': 'var(--tint-5)',
       'tint-6': 'var(--tint-6)',
 
+      'cyan': 'var(--cyan)',
       'error': 'var(--error)',
       'error-dark': 'var(--error-dark)',
-
-      'cyan': 'var(--cyan)',
+      'success': 'var(--success)',
       'violet': 'var(--violet)',
       'warning': 'var(--warning)',
     },
@@ -644,7 +644,7 @@ module.exports = {
     borderColor: ['responsive', 'hover', 'focus'],
     borderRadius: ['responsive'],
     borderStyle: ['responsive'],
-    borderWidth: ['responsive'],
+    borderWidth: ['responsive', 'first'],
     boxShadow: ['responsive', 'hover', 'focus'],
     boxSizing: ['responsive'],
     cursor: ['responsive'],

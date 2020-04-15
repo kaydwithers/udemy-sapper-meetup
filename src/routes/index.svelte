@@ -37,9 +37,9 @@
   import posts from "../store.js";
 
   import AddPost from "../components/Post/AddPost.svelte";
-  import Aside from "../components/UI/Aside.svelte";
   import BackToTop from '../components/UI/BackToTop.svelte';
   import Button from "../components/UI/Button.svelte";
+  import CategoryFilter from "../components/Post/CategoryFilter.svelte";
   import EditPost from "../components/Post/EditPost.svelte";
   import Heading from "../components/UI/Heading.svelte";
   import Layout from "../components/UI/Layout.svelte";
@@ -61,18 +61,27 @@
   const dispatch = createEventDispatcher();
 
   let favsOnly = false;
+  let isCategoryActive = false;
+  let selectedCategory = "";
 
   $: filteredPosts = favsOnly
     ? loadedPosts.filter(p => p.isFavorite)
     : loadedPosts;
 
-  $: filteredCategories = 
-    categories.filter((item, index) => categories.indexOf(item) === index);
+  // $: filteredCategories = selectedCategory
+  //   ? loadedPosts.filter(c => c.category)
+  //   : categories.filter((item, index) => categories.indexOf(item) === index);
+
+  $: getCategories = categories.filter((item, index) => categories.indexOf(item) === index);
+
+  $: filteredCategories = loadedPosts.filter((p => p.category === selectedCategory))
 
   onMount(() => {
     unsubscribe = posts.subscribe(items => {
       loadedPosts = items;
       categories = items.map(c => c.category);
+      // getCategories = categories.filter((item, index) => categories.indexOf(item) === index);
+      console.log('categories: ', categories);
     });
     posts.setPosts(fetchedPosts);
   });
@@ -85,6 +94,22 @@
 
   function setFilter(event) {
     favsOnly = event.detail === 1;
+  }
+
+  function setCategory(event) {
+    selectedCategory = event.detail.category;
+
+    if (selectedCategory) {
+      isCategoryActive = true;
+    }
+
+    // loadedPosts.category
+    // activeCategory = getCategories.filter((i) => )
+
+    console.log('loadedPosts: ', loadedPosts);
+    console.log('getCategories: ', getCategories);
+    console.log('event: ', event);
+    console.log('event.detail.category: ', event.detail.category);
   }
 
   function savedPost(event) {
@@ -113,28 +138,25 @@
 
 <Page full>
   <Layout class="relative">
-    <LayoutItem class="hidden  md:block  md:w-1/5  border-r  border-tint-3">
+    <LayoutItem class="hidden  md:block  md:w-2/12  border-r  border-tint-3">
       <div class="sticky  top-0  pt-8">
-        <Aside />
+        <Heading
+          size="2" 
+        >
+          Categories
+        </Heading>
 
         <ul>
-        {#each filteredCategories as category, i}
-          <li>
-            <Button 
-              class="block  mb-2"
-              mode="bare"
-              type="button"
-              on:click=""
-            >
-              {category}
-            </Button>
-          </li>
-        {/each}
+          <PostFilter on:select={setFilter} />
+          <CategoryFilter
+            getCategories={getCategories}
+            on:select={setCategory}
+          />
         </ul>
       </div>
     </LayoutItem>
 
-    <LayoutItem class="md:w-4/5">
+    <LayoutItem class="md:w-10/12">
       <div class="mb-24  pt-8">
         <AddPost />
       </div>
@@ -172,7 +194,7 @@
 
           {#each filteredPosts as post (post.id)}
           <div
-            class="w-full  pb-8  border-b  border-tint-3"
+            class="w-full  pb-8  border-b  first:border-t  border-tint-3"
             transition:scale
             animate:flip={{ duration: 300 }}
           >
